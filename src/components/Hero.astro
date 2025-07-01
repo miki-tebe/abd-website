@@ -1,0 +1,40 @@
+---
+import { Button } from "@/components/ui/button";
+---
+
+<section
+  class="h-screen bg-cover bg-center"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/hero.jpeg?height=800&width=1200')",
+  }}
+  id="hero"
+>
+  <div
+    class="absolute inset-0 flex items-center justify-center text-center text-white"
+  >
+    <div class="max-w-4xl px-4">
+      <h1 class="mb-6 text-5xl font-bold md:text-6xl">
+        ALLIANCE FOR <span class="text-orange-500">BIRTH</span> DEFECT
+      </h1>
+      <p class="mb-4 text-xl">
+        BUILDING BRIDGES FOR BIRTH DEFECTS, INNOVATING CARE, INSPIRING LIVES
+      </p>
+      <div class="mb-8 flex justify-center space-x-2 text-sm">
+        <span>Prevention</span>
+        <span>|</span>
+        <span>Treatment</span>
+        <span>|</span>
+        <span>Rehabilitation</span>
+      </div>
+      <Button asChild>
+        <a
+          href="/donate"
+          class="rounded-3xl bg-orange-500 px-8 py-3 text-lg text-white hover:bg-orange-600"
+        >
+          Donate
+        </a>
+      </Button>
+    </div>
+  </div>
+</section>

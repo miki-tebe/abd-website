@@ -1,0 +1,39 @@
+---
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+---
+
+<section class="bg-white py-16" id="news">
+  <div class="container mx-auto px-4">
+    <h2 class="mb-2 text-3xl font-bold">NEWS & EVENTS</h2>
+    <p class="mb-12 text-gray-600">KEEP UP TO DATE</p>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        [1, 2, 3, 4, 5, 6].map((item) => (
+          <Card key={item} className="overflow-hidden">
+            <CardContent className="p-6">
+              <h3 class="mb-2 text-lg font-bold">
+                FORE AUTHORITY FOR CIVIL SOCIETY
+              </h3>
+              <p class="mb-4 text-sm text-gray-600">
+                Alliance for Birth Defect is excited to be the first recipient
+                to receive a Fore and...
+              </p>
+              <div class="flex items-center justify-between text-sm text-gray-500">
+                <span>10 June 2024</span>
+                <a href="#" class="text-orange-500 hover:underline">
+                  Read More
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+        ))
+      }
+    </div>
+    <div class="mt-12 text-center">
+      <Button className="bg-slate-800 px-8 py-3 text-white hover:bg-slate-700">
+        EXPLORE MORE →
+      </Button>
+    </div>
+  </div>
+</section>

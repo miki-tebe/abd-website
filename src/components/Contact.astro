@@ -1,0 +1,64 @@
+---
+import { Icons } from "@/assets";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+---
+
+<section class="bg-slate-800 py-16 text-white" id="contact">
+  <div class="container mx-auto px-4">
+    <h2 class="mb-2 text-center text-3xl font-bold">GET IN TOUCH</h2>
+    <p class="mb-12 text-center text-gray-300">We'd love to hear from you</p>
+    <div class="grid gap-12 md:grid-cols-2">
+      <div>
+        <p class="mb-8">
+          Fill out the form below and we will get back to you as soon as
+          possible.
+        </p>
+        <form class="space-y-4">
+          <Input
+            placeholder="Your Name"
+            className="border-slate-600 bg-slate-700 text-white"
+          />
+          <Input
+            placeholder="Your Email"
+            className="border-slate-600 bg-slate-700 text-white"
+          />
+          <Input
+            placeholder="Subject"
+            className="border-slate-600 bg-slate-700 text-white"
+          />
+          <Textarea
+            placeholder="Message"
+            className="h-32 border-slate-600 bg-slate-700 text-white"
+          />
+          <Button className="bg-blue-600 text-white hover:bg-blue-700">
+            Send Message
+          </Button>
+        </form>
+      </div>
+      <div>
+        <h3 class="mb-6 text-xl font-bold">OUR LOCATION</h3>
+        <div
+          class="mb-6 flex h-64 items-center justify-center rounded-lg bg-gray-300"
+        >
+          <span class="text-gray-600">Map placeholder</span>
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-center">
+            <Icons.phone className="mr-3 h-5 w-5 text-orange-500" />
+            <span>+251911234567</span>
+          </div>
+          <div class="flex items-center">
+            <Icons.mail className="mr-3 h-5 w-5 text-orange-500" />
+            <span>info@allianceforbirthdefect.org</span>
+          </div>
+          <div class="flex items-center">
+            <Icons.mapPin className="mr-3 h-5 w-5 text-orange-500" />
+            <span>Addis Ababa, Ethiopia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

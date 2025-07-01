@@ -1,0 +1,44 @@
+---
+import { Icons } from "@/assets";
+import { Image } from "astro:assets";
+---
+
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-4">
+    <div class="grid items-center gap-12 md:grid-cols-2">
+      <div>
+        <Image
+          src="/placeholder.svg?height=300&width=400"
+          alt="Group of people"
+          width={400}
+          height={300}
+          class="rounded-lg"
+        />
+      </div>
+      <div>
+        <h2 class="mb-4 text-3xl font-bold">GET INVOLVED</h2>
+        <h3 class="mb-10 text-xl font-semibold text-gray-700">
+          WE BELIEVE THAT CREATING MEANINGFUL CHANGE REQUIRES COLLECTIVE ACTION.
+        </h3>
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div class="text-center">
+            <Icons.hand className="mx-auto mb-2 h-8 w-8 text-orange-500" />
+            <span class="text-sm font-medium">Volunteering</span>
+          </div>
+          <div class="text-center">
+            <Icons.handCoins className="mx-auto mb-2 h-8 w-8 text-orange-500" />
+            <span class="text-sm font-medium">Donate</span>
+          </div>
+          <div class="text-center">
+            <Icons.megaphone className="mx-auto mb-2 h-8 w-8 text-orange-500" />
+            <span class="text-sm font-medium">Current Awareness</span>
+          </div>
+          <div class="text-center">
+            <Icons.handshake className="mx-auto mb-2 h-8 w-8 text-orange-500" />
+            <span class="text-sm font-medium">Collaborate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

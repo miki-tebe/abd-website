@@ -1,0 +1,114 @@
+---
+import { cn } from "@/lib/utils";
+
+type Props = {
+  className?: string;
+};
+
+const { className } = Astro.props;
+---
+
+<footer class={cn("border-t", className)}>
+  <div
+    class="container ml-10 grid grid-cols-1 gap-6 py-14 sm:grid-cols-2 md:grid-cols-5"
+  >
+    <div>
+      <span class="text-foreground text-sm font-medium"> Follow Us </span>
+      <ul class="mt-4 list-inside space-y-3">
+        <li>
+          <a
+            href="{link.href}"
+            class="text-muted-foreground hover:text-primary text-sm"
+          >
+            Linkedin
+          </a>
+        </li>
+        <li>
+          <a
+            href="{link.href}"
+            class="text-muted-foreground hover:text-primary text-sm"
+          >
+            Facebook
+          </a>
+        </li>
+        <li>
+          <a
+            href="{link.href}"
+            class="text-muted-foreground hover:text-primary text-sm"
+          >
+            Telegram
+          </a>
+        </li>
+        <li>
+          <a
+            href="{link.href}"
+            class="text-muted-foreground hover:text-primary text-sm"
+          >
+            Instagram
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <span class="text-foreground text-sm font-medium"> Links </span>
+      <ul class="mt-4 list-inside space-y-3">
+        <li>
+          <a
+            href="/#hero"
+            class="text-muted-foreground hover:text-primary text-sm"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#about"
+            class="text-muted-foreground hover:text-primary text-sm"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#news"
+            class="text-muted-foreground hover:text-primary text-sm"
+          >
+            News & Event
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#testimonial"
+            class="text-muted-foreground hover:text-primary text-sm"
+          >
+            Testimonial
+          </a>
+        </li>
+        <li>
+          <a
+            href="/#contact"
+            class="text-muted-foreground hover:text-primary text-sm"
+          >
+            Contact
+          </a>
+        </li>
+        <li>
+          <a
+            href="/donate"
+            class="text-muted-foreground hover:text-primary text-sm"
+          >
+            Donate
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="m border-t py-4">
+    <div class="container ml-10 flex items-center justify-between">
+      <span class="text-muted-foreground text-sm">
+        Copyright &copy; {new Date().getFullYear()}. All rights reserved.
+      </span>
+    </div>
+  </div>
+</footer>

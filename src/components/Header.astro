@@ -1,0 +1,83 @@
+---
+import { cn } from "@/lib/utils";
+import { SheetMobileNav } from "@/components/sheet-mobile-nav";
+import { Image } from "astro:assets";
+import ABDLogo from "@/assets/logo.png";
+
+type Props = {
+  className?: string;
+};
+
+const { className } = Astro.props;
+---
+
+<header
+  class={cn(
+    "bg-background fixed w-full top-0 z-50 flex h-16 items-center md:h-18",
+    className
+  )}
+>
+  <div class="relative container flex w-full items-center justify-between">
+    <div class="flex items-center gap-6 md:gap-8 lg:gap-10">
+      <a href="/" class="ml-10 hidden items-center space-x-2 md:flex">
+        <Image src={ABDLogo} width={64} height={64} alt="Logo" />
+      </a>
+
+      <SheetMobileNav client:load />
+
+      <div class="hidden md:flex">
+        <nav class="hidden gap-6 md:flex">
+          <a
+            href="/#hero"
+            class={cn(
+              "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
+            )}
+          >
+            Home
+          </a>
+          <a
+            href="/#about"
+            class={cn(
+              "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
+            )}
+          >
+            About
+          </a>
+          <a
+            href="/#news"
+            class={cn(
+              "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
+            )}
+          >
+            News & Event
+          </a>
+          <a
+            href="/#testimonial"
+            class={cn(
+              "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
+            )}
+          >
+            Testimonial
+          </a>
+          <a
+            href="/#contact"
+            class={cn(
+              "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
+            )}
+          >
+            Contact
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- logo mobile center -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-4 -translate-y-4 md:hidden"
+    >
+      <a href="/" aria-label="Alliance For Birth Defect homepage">
+        <Image src={ABDLogo} width={64} height={64} alt="Logo" />
+      </a>
+    </div>
+  </div>
+</header>

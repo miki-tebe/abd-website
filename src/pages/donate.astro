@@ -1,0 +1,128 @@
+---
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import Layout from "@/layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+---
+
+<Layout>
+  <Header />
+  <main>
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <h1 class="my-20 text-center text-3xl font-bold text-gray-800">
+          Support Our Cause
+        </h1>
+
+        <form method="POST" action="https://api.chapa.co/v1/hosted/pay">
+          <input type="hidden" name="public_key" value="YOUR_PUBLIC_API_KEY" />
+
+          <input type="hidden" name="tx_ref" id="tx_ref_id" value="" />
+
+          <input type="hidden" name="currency" value="ETB" />
+          <input
+            type="hidden"
+            name="callback_url"
+            value="https://example.com/callbackurl"
+          />
+          <input
+            type="hidden"
+            name="return_url"
+            value="https://example.com/returnurl"
+          />
+
+          <input type="hidden" name="title" value="Donation to Our Charity" />
+          <input
+            type="hidden"
+            name="description"
+            value="Thank you for your generous support!"
+          />
+          <input
+            type="hidden"
+            name="logo"
+            value="https://chapa.link/asset/images/chapa_swirl.svg"
+          />
+          <input type="hidden" name="meta[title]" value="test" />
+
+          <div class="mb-4">
+            <label for="amount" class="mb-2 block font-medium text-gray-700">
+              Choose or Enter an Amount (ETB)
+            </label>
+
+            <div class="mb-4 grid grid-cols-4 gap-4">
+              <Button
+                type="button"
+                className="donation-button w-full bg-orange-500 hover:bg-orange-600"
+                data-amount="50"
+              >
+                50
+              </Button>
+              <Button
+                type="button"
+                className="donation-button w-full bg-orange-500 hover:bg-orange-600"
+                data-amount="100"
+              >
+                100
+              </Button>
+              <Button
+                type="button"
+                className="donation-button w-full bg-orange-500 hover:bg-orange-600"
+                data-amount="250"
+              >
+                250
+              </Button>
+              <Button
+                type="button"
+                className="donation-button w-full bg-orange-500 hover:bg-orange-600"
+                data-amount="500"
+              >
+                500
+              </Button>
+            </div>
+
+            <input
+              type="number"
+              id="amount"
+              name="amount"
+              min="1"
+              required
+              placeholder="Or enter a custom amount"
+              class="w-full rounded-md border border-gray-300 p-3 text-lg focus:border-transparent focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <Button className="bg-orange-500 hover:bg-orange-600" type="submit">
+            Donate Now
+          </Button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const amountInput = document.getElementById("amount");
+    const donationButtons = document.querySelectorAll(".donation-button");
+
+    donationButtons.forEach((button) => {
+      button.addEventListener("click", function (this: HTMLButtonElement) {
+        if (amountInput) {
+          (amountInput as HTMLInputElement).value =
+            this.getAttribute("data-amount") || "";
+        }
+        donationButtons.forEach((btn) => btn.classList.remove("selected"));
+        this.classList.add("selected");
+      });
+    });
+
+    const txRefInput = document.getElementById("tx_ref_id");
+    const prefix = "my-charity-tx-";
+    const uniqueId =
+      prefix +
+      Date.now().toString(36) +
+      Math.random().toString(36).substring(2);
+
+    (txRefInput as HTMLInputElement).value = uniqueId;
+  });
+</script>

@@ -1,0 +1,58 @@
+---
+import { Icons } from "@/assets";
+import { Button } from "@/components/ui/button";
+---
+
+<section class="bg-white py-16" id="about">
+  <div class="container mx-auto grid gap-8 px-4 md:px-8">
+    <div class="grid items-center gap-12 md:grid-cols-2">
+      <div>
+        <h2 class="mb-6 text-3xl font-bold">ABOUT US</h2>
+        <h3 class="mb-4 text-xl font-semibold text-gray-700">
+          WE HELP IMPROVE THE LIVES OF INDIVIDUALS AND FAMILIES AFFECTED BY
+          BIRTH DEFECTS
+        </h3>
+      </div>
+      <p class="leading-relaxed text-gray-600">
+        The Alliance for Birth Defects (ABD) is a nonprofit organization
+        dedicated to the prevention, treatment, and rehabilitation of birth
+        defects. Our mission is to improve the lives of individuals and families
+        affected by birth defects by promoting awareness, providing support, and
+        driving advancements in research and healthcare.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div class="p-6 text-center">
+        <Icons.shield className="mx-auto mb-4 h-12 w-12 text-orange-500" />
+        <h4 class="mb-2 font-bold">PREVENTION</h4>
+        <p class="text-sm text-gray-600">
+          By raising awareness and providing resources, we aim to reduce the
+          occurrence and impact of birth defects.
+        </p>
+      </div>
+      <div class="p-6 text-center">
+        <Icons.stethoscope className="mx-auto mb-4 h-12 w-12 text-orange-500" />
+        <h4 class="mb-2 font-bold">TREATMENT</h4>
+        <p class="text-sm text-gray-600">
+          We strive to improve treatment options and outcomes for affected
+          individuals at every stage of their lives.
+        </p>
+      </div>
+      <div class="p-6 text-center">
+        <Icons.building className="mx-auto mb-4 h-12 w-12 text-orange-500" />
+        <h4 class="mb-2 font-bold">REHABILITATION</h4>
+        <p class="text-sm text-gray-600">
+          We facilitate access to services that enhance the quality of life and
+          promote inclusion.
+        </p>
+      </div>
+    </div>
+    <div class="mt-12 text-center">
+      <Button
+        className="bg-orange-500 px-8 py-3 text-white hover:bg-orange-600"
+      >
+        Read More
+      </Button>
+    </div>
+  </div>
+</section>

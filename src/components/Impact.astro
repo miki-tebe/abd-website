@@ -1,0 +1,56 @@
+---
+import { Button } from "@/components/ui/button";
+import { Image } from "astro:assets";
+---
+
+<section class="bg-slate-800 py-16 text-white" id="impact">
+  <div class="container mx-auto px-4">
+    <div class="grid items-center gap-12 md:grid-cols-2">
+      <div class="relative">
+        <Image
+          src="/placeholder.svg?height=400&width=300"
+          alt="Person profile"
+          width={300}
+          height={400}
+          class="rounded-lg"
+        />
+      </div>
+      <div>
+        <h2 class="mb-8 text-3xl font-bold">OUR IMPACT</h2>
+        <ul class="mb-8 space-y-4">
+          <li class="mb-7 flex items-start">
+            <span class="mr-2 text-orange-500">•</span>
+            <span>
+              Raised awareness about the importance of prenatal care and healthy
+              lifestyles, leading to a reduction in preventable birth defects.
+            </span>
+          </li>
+          <li class="mb-7 flex items-start">
+            <span class="mr-2 text-orange-500">•</span>
+            <span>
+              Supported research initiatives, contributing to the development of
+              innovative treatments and interventions.
+            </span>
+          </li>
+          <li class="mb-7 flex items-start">
+            <span class="mr-2 text-orange-500">•</span>
+            <span>
+              Advocated for policy changes and legislation that protect the
+              rights and well-being of individuals with birth defects.
+            </span>
+          </li>
+          <li class="mb-7 flex items-start">
+            <span class="mr-2 text-orange-500">•</span>
+            <span>
+              Provided comprehensive support services and resources to
+              individuals, families, and communities affected by birth defects.
+            </span>
+          </li>
+        </ul>
+        <Button className="bg-blue-600 px-6 py-2 text-white hover:bg-blue-700">
+          How Can I Support?
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
