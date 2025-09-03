@@ -11,6 +11,8 @@ import markdoc from "@astrojs/markdoc";
 
 import keystatic from "@keystatic/astro";
 
+import vercel from "@astrojs/vercel";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -18,4 +20,5 @@ export default defineConfig({
   },
 
   integrations: [react(), icon(), markdoc(), keystatic()],
+  adapter: vercel(),
 });
